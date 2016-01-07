@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Name="MGPackager" Path="MGPackager" Type="App" Platforms="Windows,MacOS,Linux">
+  <Properties>
+    <Property Name="LangVersion" Value="5" />
+    <CustomDefinitions>
+      <Platform Name="Windows">TRACE;WINDOWS;GTK2</Platform>
+      <Platform Name="MacOS">TRACE;MAC;GTK2</Platform>
+      <Platform Name="Linux">TRACE;LINUX;GTK3</Platform>
+    </CustomDefinitions>
+    <MonoDevelopPoliciesFile>Build/MonoDevelopPolicies.xml</MonoDevelopPoliciesFile>
+  </Properties>
+  <References>
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="MGPackager.ThirdParty" />
+  </References>
+  <Files>
+    <Compile Include="Common\GeneratorData.cs" />
+    <Compile Include="Common\GeneratorOutputArgs.cs" />
+    <Compile Include="Common\GeneratorOutputHandler.cs" />
+    <Compile Include="Common\Generators.cs" />
+    <Compile Include="Common\IFileDialog.cs" />
+    <Compile Include="Common\IGenerator.cs" />
+    <Compile Include="FileDialog\FileDialog.Gtk.cs" />
+    <Compile Include="Generators\DebInstaller.cs">
+      <Platforms>Linux</Platforms>
+    </Compile>
+    <Compile Include="Generators\ExeInstaller.cs">
+      <Platforms>Windows</Platforms>
+    </Compile>
+    <Compile Include="Generators\LinuxBundler.cs" />
+    <Compile Include="Generators\MacBundler.cs" />
+    <Compile Include="Generators\PkgInstaller.cs">
+      <Platforms>MacOS</Platforms>
+    </Compile>
+    <Compile Include="Generators\RpmInstaller.cs">
+      <Platforms>Linux</Platforms>
+    </Compile>
+    <Compile Include="Generators\RunInstaller.cs">
+      <Platforms>Linux</Platforms>
+    </Compile>
+    <Compile Include="Generators\WindowsBundler.cs" />
+    <Compile Include="MainWindow.cs" />
+    <Compile Include="MainWindow.GUI.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Widgets\TagCheckButton.cs" />
+  </Files>
+</Project>
