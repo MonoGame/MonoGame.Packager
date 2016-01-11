@@ -96,9 +96,11 @@ namespace MGPackager
 
             try
             {
+                /*
+                 * This can be used to scan subfolders if we ever want to
+                 * allow the game to exist within subfolder.
+                 * 
                 var directories = System.IO.Directory.GetDirectories(folder);
-                var files = System.IO.Directory.GetFiles(folder);
-
                 foreach (var d in directories)
                 {
                     var dirname = System.IO.Path.GetFileName(d);
@@ -108,8 +110,9 @@ namespace MGPackager
                         treestore1.Remove(ref i);
                     else
                         ret = true;
-                }
+                }*/
 
+                var files = System.IO.Directory.GetFiles(folder);
                 foreach (var f in files)
                 {
                     if (f.EndsWith(".exe"))
@@ -205,7 +208,7 @@ namespace MGPackager
 
             Application.Invoke(delegate
                 {
-                    textView1.Buffer.Text += "\r\n\r\nDONE";
+                    textView1.Buffer.Text += "\r\nDONE";
 
                     var btn = new Button("Close");
                     btn.Clicked += (sender, e) => Application.Quit();

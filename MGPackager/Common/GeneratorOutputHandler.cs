@@ -19,7 +19,12 @@ namespace MGPackager
         public void WriteLine(string line)
         {
             if (OutputHandler != null)
-                OutputHandler(this, new GeneratorOutputArgs(line + "\r\n"));
+                OutputHandler(this, new GeneratorOutputArgs(line + Environment.NewLine));
+        }
+
+        public void WritePassage(string line)
+        {
+            WriteLine(Environment.NewLine + line);
         }
     }
 }

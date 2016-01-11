@@ -13,8 +13,10 @@ namespace MGPackager
             return new List<IGenerator>()
             {
                 new WindowsBundler(),
+#if LINUX || MAC
                 new MacBundler(),
-                new LinuxBundler()
+                new LinuxBundler(),
+#endif
             };
         }
 
