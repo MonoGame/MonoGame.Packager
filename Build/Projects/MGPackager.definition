@@ -27,7 +27,9 @@
     <Compile Include="FileDialog\FileDialog.Gtk.cs">
       <Platforms>Linux,MacOS</Platforms>
     </Compile>
-    <Compile Include="FileDialog\FileDialog.WinForms.cs" />
+    <Compile Include="FileDialog\FileDialog.WinForms.cs">
+      <Platforms>Windows</Platforms>
+    </Compile>
     <Compile Include="Generators\Bundle\BundleGenerator.cs" />
     <Compile Include="Generators\Bundle\LinuxBundler.cs" />
     <Compile Include="Generators\Bundle\MacBundler.cs" />

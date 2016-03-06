@@ -6,7 +6,7 @@ using System;
 
 namespace MGPackager
 {
-    public class DebInstaller : IGenerator
+    class DebInstaller : IGenerator
     {
         public string Name
         {

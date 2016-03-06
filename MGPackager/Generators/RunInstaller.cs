@@ -6,7 +6,7 @@ using System;
 
 namespace MGPackager
 {
-    public class RunInstaller : IGenerator
+    class RunInstaller : IGenerator
     {
         public string Name
         {

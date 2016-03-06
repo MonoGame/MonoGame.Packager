@@ -6,7 +6,7 @@ using System;
 
 namespace MGPackager
 {
-    public class RpmInstaller : IGenerator
+    class RpmInstaller : IGenerator
     {
         public string Name
         {
