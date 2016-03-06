@@ -6,7 +6,7 @@ using System;
 
 namespace MGPackager
 {
-    public class GeneratorOutputArgs : EventArgs
+    class GeneratorOutputArgs : EventArgs
     {
         public string Text { get; private set; }
 

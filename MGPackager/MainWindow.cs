@@ -10,7 +10,7 @@ using Gtk;
 
 namespace MGPackager
 {
-    public partial class MainWindow : Window
+    partial class MainWindow : Window
     {
         GeneratorData generatorData;
         GeneratorOutputHandler generatorOutput;

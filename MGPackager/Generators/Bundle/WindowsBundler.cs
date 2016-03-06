@@ -8,7 +8,7 @@ using System.IO.Compression;
 
 namespace MGPackager
 {
-    public class WindowsBundler : BundleGenerator
+    class WindowsBundler : BundleGenerator
     {
         public override string Name
         {

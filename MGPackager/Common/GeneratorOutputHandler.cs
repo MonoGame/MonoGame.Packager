@@ -6,7 +6,7 @@ using System;
 
 namespace MGPackager
 {
-    public class GeneratorOutputHandler
+    class GeneratorOutputHandler
     {
         public event EventHandler<GeneratorOutputArgs> OutputHandler;
 

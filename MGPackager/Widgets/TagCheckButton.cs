@@ -6,7 +6,7 @@ using Gtk;
 
 namespace MGPackager
 {
-    public class TagCheckButton : CheckButton
+    class TagCheckButton : CheckButton
     {
         public object Tag { get; set; }
 

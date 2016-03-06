@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace MGPackager
 {
-    public static class Generators
+    static class Generators
     {
         internal static List<IGenerator> GetBundlerList()
         {

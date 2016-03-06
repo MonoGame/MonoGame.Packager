@@ -8,7 +8,7 @@ using Gtk;
 
 namespace MGPackager
 {
-    public partial class MainWindow
+    partial class MainWindow
     {
         VBox vbox1, vbox2, vbox3;
         Notebook notebook1;
@@ -29,7 +29,10 @@ namespace MGPackager
             this.Title = "MonoGame Packager";
             this.DefaultWidth = this.WidthRequest = 640;
             this.DefaultHeight = this.HeightRequest = 480;
-            this.BorderWidth = 4;
+
+#if WINDOWS
+            this.ModifyBg (StateType.Normal, new Gdk.Color (255, 255, 255));
+#endif
 
 #if GTK3
             var geom = new Gdk.Geometry();
@@ -220,24 +223,34 @@ namespace MGPackager
 
             vbox1.PackStart(notebook1, true, true, 0);
 
+            var eventBox = new EventBox ();
+#if WINDOWS
+            eventBox.ModifyBg (StateType.Normal, new Gdk.Color (240, 240, 240));
+#endif
+
             hbox1 = new HBox();
+            hbox1.BorderWidth = 10;
 
             btnCancel = new Button("Cancel");
+            btnCancel.WidthRequest = 90;
             btnCancel.Clicked += (sender, e) => Application.Quit();
-            hbox1.PackStart(btnCancel, false, true, 0);
+            hbox1.PackStart(btnCancel, false, false, 0);
 
             hbox1.PackStart(new Label(), true, true, 1);
 
             btnPrev = new Button("Previous");
+            btnPrev.WidthRequest = btnCancel.WidthRequest;
             btnPrev.Clicked += BtnPrev_Clicked;
             btnPrev.Sensitive = false;
-            hbox1.PackStart(btnPrev, false, true, 2);
+            hbox1.PackStart(btnPrev, false, false, 2);
 
             btnNext = new Button("Next");
+            btnNext.WidthRequest = btnCancel.WidthRequest;
             btnNext.Clicked += BtnNext_Clicked;
-            hbox1.PackStart(btnNext, false, true, 3);
+            hbox1.PackStart(btnNext, false, false, 3);
 
-            vbox1.PackStart(hbox1, false, true, 1);
+            eventBox.Add (hbox1);
+            vbox1.PackStart(eventBox, false, true, 1);
 
             this.Add(vbox1);
             this.ShowAll();

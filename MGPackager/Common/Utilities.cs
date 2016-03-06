@@ -7,7 +7,7 @@ using System.IO;
 
 namespace MGPackager
 {
-    public static class Utilities
+    static class Utilities
     {
         public static void CopyDirectory(string sourceDirPath, string destDirPath)
         {

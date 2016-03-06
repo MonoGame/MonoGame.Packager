@@ -4,7 +4,7 @@
 
 namespace MGPackager
 {
-    public class MacBundler : LinuxBundler
+    class MacBundler : LinuxBundler
     {
         public override string Name
         {

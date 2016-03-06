@@ -7,7 +7,7 @@ using System.IO;
 
 namespace MGPackager
 {
-    public class BundleGenerator : IGenerator
+    class BundleGenerator : IGenerator
     {
         public virtual string Name
         {
